@@ -103,3 +103,74 @@ a:focus-visible {
     outline: 3px solid #B9A9F2;
     outline-offset: 4px;
 }
+
+.hero {
+    padding-block: 88px 96px;
+}
+
+.hero-content {
+    display: grid;
+    grid-template-columns: 1.05fr 0.95fr;
+    align-items: center;
+    gap: 80px;
+}
+
+.eyebrow {
+    display: inline-block;
+    color: var(--color-purple);
+    font-size: 0.82rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.hero h1 {
+    max-width: 650px;
+    margin: 16px 0 24px;
+    color: var(--color-dark);
+    font-size: clamp(3.5rem, 5vw, 5rem);
+    line-height: 1.05;
+    letter-spacing: -3px;
+}
+
+.hero p {
+    max-width: 580px;
+    margin-bottom: 3px;
+    color: var(--color-muted);
+    font-size: 1.15rem;
+    line-height: 1.8;
+}
+
+.hero-visual {
+    min-height: 390px;
+    display: grid;
+    place-items: center;
+    padding: 40px;
+    border: 1px solid #DCD4f2;
+    border-radius: 24px;
+    background:
+        radial-gradient(
+            circle at 75% 20%,
+            #D2C7F1 0,
+            transparent 36%
+        ),
+        var(--color-lavender);
+    color: var(--color-purple);
+    text-align: center;
+}
+
+.hero-visual h2 {
+    margin-bottom: 4px;
+    color: var(--color-dark);
+    font-size: 1.7rem;
+}
+
+.hero-visual p {
+    margin: 0;
+    font-size: 1rem;
+}
+
+.music-symbol {
+    font-size: 7rem;
+    line-height: 1.2;
+}
