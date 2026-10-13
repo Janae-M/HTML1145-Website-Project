@@ -43,3 +43,63 @@ a {
     color: inherits;
     text-decoration: none;
 }
+
+.container {
+    width: min(
+        var(--page-width),
+        calc(100% - var(--page-gutter) * 2)
+    );
+    margin-inline: auto;
+}
+
+.site-header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: var(--color-dark);
+    color: var(--color-white);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+}
+
+.navbar {
+    min-height: 84px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 32px;
+}
+
+.logo {
+    flex-shrink: 0;
+    font-size: 1.55rem;
+    font-weight: 800;
+    letter-spacing: -0.7px;
+}
+
+.logo span {
+    color: #B9A9F2;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+}
+
+.nav-links a {
+    padding-block: 8px;
+    color: #F7F5F0;
+    font-size: 0.94rem;
+    white-space: nowrap;
+    transition: all 0.2s ease;
+}
+
+.nav-links a:hover,
+.nav-links a[aria-current="page"] {
+    color:#B9A9F2
+}
+
+a:focus-visible {
+    outline: 3px solid #B9A9F2;
+    outline-offset: 4px;
+}
