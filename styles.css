@@ -196,3 +196,25 @@ a:focus-visible {
     background: #6250ac;
     transform: translateY(-2px)
 }
+
+.topics {
+    padding-block: 76px 88px;
+    background: var(--color-white)
+}
+
+.section-heading {
+    margin-bottom: 40px;
+}
+
+.section-heading h2 {
+    margin: 8px 0;
+    color: var(--color-dark);
+    font-size: 2.5rem;
+    line-height: 1.2;
+}
+
+.section-heading p {
+    margin: 0;
+    color: var(--color-muted);
+    font-size: 1.05rem;
+}
