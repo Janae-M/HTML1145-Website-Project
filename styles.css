@@ -368,3 +368,47 @@ a:focus-visible {
         padding: 36px;
     }
 }
+
+@media (max-width: 520px) {
+    :root {
+        --page-gutter: 18px;
+    }
+
+    .logo {
+        font-size: 1.35rem;
+    }
+
+    .nav-links {
+        gap: 8px 14px;
+    }
+
+    .nav-links a {
+        font-size: 0.84rem;
+    }
+
+    .hero h1 {
+        font-size: 2.8rem;
+        letter-spacing: -1.5px;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    .topic-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .topic-card {
+        min-height: auto;
+    }
+
+    .featured {
+        margin-block: 36px;
+        padding: 26px;
+    }
+
+    .featured h2 {
+        font-size: 1.8rem;
+    }
+}
