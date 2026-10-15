@@ -283,3 +283,15 @@ a:focus-visible {
     color: var(--color-text);
     font-size: 1.05rem;
 }
+
+.site-footer {
+    padding-block: 36px;
+    background: var(--color-dark);
+    color: var(--color-white);
+    text-align: center;
+}
+
+.site-footer p {
+    margin: 5px 0;
+    font-size: 0.9rem;
+}
