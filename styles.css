@@ -22,7 +22,7 @@
 
 html {
     scroll-behavior: smooth;
-    scroll-padding-top: 100px
+    scroll-padding-top: 100px;
 }
 
 body {
@@ -194,12 +194,12 @@ a:focus-visible {
 
 .button:hover {
     background: #6250ac;
-    transform: translateY(-2px)
+    transform: translateY(-2px);
 }
 
 .topics {
     padding-block: 76px 88px;
-    background: var(--color-white)
+    background: var(--color-white);
 }
 
 .section-heading {
@@ -310,7 +310,7 @@ a:focus-visible {
     }
 
     .hero-content {
-        gap: 42px
+        gap: 42px;
     }
 
     .hero h1 {
