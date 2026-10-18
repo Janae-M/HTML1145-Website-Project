@@ -535,3 +535,21 @@ a:focus-visible {
     color: var(--color-muted);
     line-height: 1.7;
 }
+
+.era-navigation {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 32px;
+}
+
+.era-navigation button {
+    cursor: pointer;
+}
+
+.era-navigation button:disabled {
+    opacity: 0.45;
+    cursor: not-allowed;
+    transform: none;
+}
