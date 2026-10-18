@@ -146,7 +146,156 @@
                 </div>
             </div>
         </section>
+
+        <section class="featured container">
+            <span class="eyebrow">Keep exploring</span>
+            <h2>Music continues to evolve.</h2>
+            <p>
+                Each era builds on earlier traditions while introducing new sounds, ideas, and ways of sharing music.
+            </p>
+            <a class="button" href="present.html">Discover Music Today →</a>
+        </section>
     </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <p><strong>♫ Music Unraveled</strong></p>
+            <p>Discover the past. Understand the present. Hear the future.</p>
+            <p>&copy; 2026 Music Unraveled</p>
+        </div>
+    </footer>
+    
+    <script>
+        const musicEras = [
+            {
+                id: "ancient",
+                date: "Ancient civilizations",
+                title: "The Origins of Music",
+                description: "Music has accompanied human communities since ancient times. Singing, percussion, and instruments played roles in ceremonies, storytelling, celebrations, and social life.",
+                characteristics: "Rhythm, repetition, chanting, and musical traditions passed from generation to generation by listening and imitation.",
+                instruments: "Drums, rattles, flutes, and other instruments made from locally available materials.",
+                people: "Explore ancient Egyptian, Mesopotamian, Greek, and other musical traditions around the world."
+            },
+            {
+                id: "medieval",
+                date: "Approximately 500-1400",
+                title: "The Medieval Period",
+                description: "In medieval Europe, religious music developed alongside secular songs performed by traveling musicians, court performers, and local communities.",
+                chracteristics: "Gregorian chant, early forms of musical notation, and the gradual development of polyphony.",
+                instruments: "Lute, harp, vielle, recorder, and early forms of keyboard instruments.",
+                people: "Hildegard of Bingen, troubadours, trouvères, and the many unnamed musicians who preserved musical traditions."
+            },
+            {
+               id: "renaissance",
+               date: "Approximately 1400-1600",
+               title: "The Renaissance",
+               description: "Growing interest in arts and learning helped musical traditions flourish. Printing music made it easier to share compositions across regions.",
+               chracteristics: "Polyphony, interweaving melodic lines, vocal ensembles, and increasingly expressive instrumental music.",
+               instruments: "Lute, viol, recorder, harpsichord, and various wind instruments.",
+               people: "Josquin des Prez, Giovanni Pierluigi da Palestrina, and William Byrd."
+            },
+            {
+                id: "baroque",
+                date: "Approximately 1600-1750",
+                title: "The Baroque Period",
+                description: "Baroque music often featured dramatic contrasts, elaborate melodies, and the development of opera and major instrumental forms.",
+                chracteristics: "Ornamentation, basso continuo, expressive contrasts, and intricate musical textures.",
+                instruments: "Harpsichord, organ, violin, cello, and the growing Baroque orchestra.",
+                people: "Johann Sebastian Bach, George Frideric Handel, Antonio Vivaldi, and Claudio Monteverdi."
+            },
+            {
+                id: "classical",
+                date: "Approximately 1750-1820",
+                title: "The Classical Period",
+                description: "Composers developed balanced musical structures and clear melodic ideas. Public concerts and instrumental music became increasingly important.",
+                chracteristics: "Symmetry, clear phrasing, sonata form, string quartets, and symphonies.",
+                instruments: "Piano, flute, clarinet, strings, and orchestral instruments.",
+                people: "Joseph Haydn, Wolfgang Amadeus Mozart, and Ludwig van Beethoven."
+            },
+            {
+                id: "romantic",
+                date: "Approximately 1800-1900",
+                title: "The Romantic Period",
+                description: "Romantic composers often emphasized individual expression, dramatic storytelling, nature, and powerful emotional experiences.",
+                chracteristics: "Expanded harmonies, expressive melodies, program music, and larger orchestras.",
+                instruments: "Piano, violin, cello, and expanded brass and woodwind sections.",
+                people: "Frédéric Chopin, Clara Schumann, Pyotr Ilyich Tchaikovsky, and Johannes Brahms."
+            },
+            {
+                id: "twentieth",
+                date: "Approximately 1900-2000",
+                title: "Music in the 20th Century",
+                description: "Recording, radio, and new technologies transformed music. Jazz, blues, rock, hip-hop, and many other traditions influenced music around the world.",
+                chracteristics: "New harmonies, experimentation, improvisation, amplified sound, and the growth of popular music.",
+                instruments: "Electric guitar, drum kit, saxophone, synthesizer, and recording equipment.",
+                people: "Explore Louis Armstrong, Duke Ellington, Sister Rosetta Tharpe, and the many artists who shaped diverse musical movements."
+            },
+            {
+                id: "modern",
+                date: "2000-Today",
+                title: "Music in the Digital Age",
+                description: "Digital recording, online distribution, streaming, and social platforms have changed how music is made, shared, and discovered.",
+                chracteristics: "Genre blending, global collaboration, digital production, sampling, and rapidly changing listening habits.",
+                instruments: "Digital audio workstations, synthesizers, electronic controllers, acoustic instruments, and computers.",
+                people: "Explore contemporary artists from different countries, genres, and musical communities."
+            }
+        ];
+
+        const buuttons = document.querySelectorAll(",era-button");
+
+        const dateElement = document.getElementById("era-date");
+        const titleElement = document.getElementById("era-title");
+        const descriptionElement = document.getElementById("era-description");
+        const characteristicsElement = document.getElementById("era-characteristics");
+        const instrumentsElement = document.getElementById("era-instruments");
+        const peopleElement = document.getElementById("era-people");
+
+        const previousButton = document.getElementById("previous-era");
+        const nextButton = document.getElementById("next-era");
+
+        let currentIndex = 0;
+
+        function showEra(index) {
+            currentIndex = index;
+
+            const era = musicEras[currentIndex];
+
+            dateElement.textContent = era.date;
+            titleElement.textContent = era.title;
+            descriptionElement.textContent = era.description;
+            characteristicsElement.textContent = era.characteristics;
+            instrumentsElement.textContent = era.instruments;
+            peopleElement.textContent = era.people;
+
+            buttons.forEach((button, buttonIndex) => {
+                const isActive = buttonIndex === currentIndex;
+
+                button.classList.toggle("active", isActive);
+                button.setAttribute("aria-pressed", String(isActive));
+            });
+
+            previousButton.disabled = currentIndex === 0;
+            nextButton.disabled = currentIndex === musicEras.length - 1;
+        }
+
+        buttons.forEach((button, index) => {
+            button.addEventListener("click", () => showEra(index));
+        });
+
+        previousButton.addEventListener("click", () => {
+            if (currentIndex > 0) {
+                showEra(currentIndex - 1);
+            }
+        });
+
+        nextButton.addEventListener("click", () => {
+            if (currentIndex < musicEras.length - 1) {
+                showEra(currentIndex + 1);
+            }
+        });
+
+        showEra(0);
+    </script>
     
 </body>
 </html>
