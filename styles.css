@@ -235,7 +235,7 @@ a:focus-visible {
     transition:
         transform 0.2s ease,
         border-color 0.2s ease,
-        box-shawdow 0.2s ease
+        box-shawdow 0.2s ease;
 }
 
 .topic-card:hover {
@@ -423,4 +423,76 @@ a:focus-visible {
     *::after {
         transition: none !important;
     }
+}
+
+.timeline-section {
+    padding-block: 70px 90px;
+    background: var(--color-white);
+}
+
+.timeline-layout {
+    display: grid;
+    grid-template-columns: minmax(260px, 0.8fr) minmax(0, 1.5fr);
+    gap: 36px;
+    align-items: start;
+    margin-top: 40px;
+}
+
+.timeline-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    position: relative;
+}
+
+.era-button {
+    display: block;
+    width: 100%;
+    padding: 18px 22px;
+    border: 1px solid var(--color-border);
+    border-left: 5px solid transparent;
+    border-radius: 10px;
+    background: var(--color-background);
+    color: var(--color-dark);
+    text-align: left;
+    cursor: pointer;
+    transition:
+        background-color 0.2s ease,
+        border-color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.era-button:hover {
+    border-color: var(--color-purple);
+    transform: translateX(3px);
+}
+
+.era-button:active {
+    border-left-color: var(--color-purple);
+    background: var(--color-lavender);
+}
+
+.era-button:focus-visible,
+.era-navigation button:focus-visible {
+    outline: 3px solid var(--color-purple);
+    outline-offset: 3px;
+}
+
+.era-date,
+.era-name {
+    display: block;
+}
+
+.era-date {
+    margin-bottom: 4px;
+    color: var(--color-purple);
+    font-size: 0.78rem;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+.era-name {
+    font-size: 1rem;
+    font-weight: 700;
 }
